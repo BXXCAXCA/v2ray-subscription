@@ -62,9 +62,9 @@ if __name__ == "__main__":
         
         # 下载配置文件
         print("正在下载配置文件...")
-        if download_config(subscription_url, 'v2ray_config.txt'):
+        if download_config(subscription_url, 'docs/v2ray_config.txt'):
             # 更新时间戳
-            with open('last_update.txt', 'w') as f:
+            with open('docs/last_update.txt', 'w') as f:
                 f.write(datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC'))
             print("更新成功！")
         else:
