@@ -1,5 +1,6 @@
 import requests
 import re
+import os
 from datetime import datetime
 
 def scrape_v2ray_subscription(url):
@@ -48,7 +49,7 @@ def download_config(subscription_url, output_file):
         return False
 
 if __name__ == "__main__":
-    source_url = "https://skill-note.blogspot.com/2024/10/30-mh370mh3704000.html?m=1"
+    source_url = os.getenv('SOURCE_URL', 'https://skill-note.blogspot.com/2024/10/30-mh370mh3704000.html?m=1')
     
     print("正在爬取订阅地址...")
     subscription_url = scrape_v2ray_subscription(source_url)
