@@ -12,6 +12,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     
+    env:
+      SOURCE_URL: ${{ secrets.SOURCE_URL }}
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4

@@ -49,7 +49,11 @@ def download_config(subscription_url, output_file):
         return False
 
 if __name__ == "__main__":
-    source_url = os.getenv('SOURCE_URL', 'https://skill-note.blogspot.com/2024/10/30-mh370mh3704000.html?m=1')
+    source_url = os.getenv('SOURCE_URL')
+    
+    if not source_url:
+        print("错误: 未设置 SOURCE_URL 环境变量")
+        exit(1)
     
     print("正在爬取订阅地址...")
     subscription_url = scrape_v2ray_subscription(source_url)
